@@ -16,6 +16,18 @@ class PostsController extends AppController {
 		$this->set('post', $this->Post->read(null, $id));
 	}
 
+
+	function simpleview($id = null) {
+		$this->layout='simple';
+		if (!$id) {
+			$this->Session->setFlash(__('Invalid post', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->set('post', $this->Post->read(null, $id));
+	}
+
+
+
 	function add() {
 		if (!empty($this->data)) {
 			$this->Post->create();
