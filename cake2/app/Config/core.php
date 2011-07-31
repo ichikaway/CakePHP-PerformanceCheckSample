@@ -291,7 +291,7 @@
  */
 $engine = 'File';
 if (extension_loaded('apc') && (php_sapi_name() !== 'cli' || ini_get('apc.enable_cli'))) {
-//	$engine = 'Apc';
+	$engine = 'Apc';
 }
 
 // In development mode, caches should expire quickly.
