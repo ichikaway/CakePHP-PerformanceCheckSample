@@ -33,9 +33,11 @@ class PostsController extends AppController {
 	public function simpleview($id = null) {
 		$this->layout='simple';
 		$this->Post->id = $id;
-		if (!$this->Post->exists()) {
-			throw new NotFoundException(__('Invalid post'));
-		}
+
+		//if (!$this->Post->exists()) {
+		//	throw new NotFoundException(__('Invalid post'));
+		//}
+
 		$this->set('post', $this->Post->read(null, $id));
 	}
 
