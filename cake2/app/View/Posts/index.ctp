@@ -2,12 +2,13 @@
 	<h2><?php echo __('Posts');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('name');?></th>
-			<th><?php echo $this->Paginator->sort('text');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th class="actions"><?php echo __('Actions');?></th>
+
+			<th><?php echo 'id' //$this->Paginator->sort('id');?></th>
+			<th><?php echo 'name' //$this->Paginator->sort('name');?></th>
+			<th><?php echo 'text' //$this->Paginator->sort('text');?></th>
+			<th><?php echo 'created' //$this->Paginator->sort('created');?></th>
+			<th><?php echo 'modified' //$this->Paginator->sort('modified');?></th>
+			<th class="actions">Actions</th>
 	</tr>
 	<?php
 	$i = 0;
