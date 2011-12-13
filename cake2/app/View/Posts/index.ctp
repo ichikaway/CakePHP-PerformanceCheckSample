@@ -22,7 +22,9 @@
 		<td class="actions">
 			<a href="/php/cake/blog2/posts/view/<?php echo $post['Post']['id'];?>">View</a>
 			<a href="/php/cake/blog2/posts/edit/<?php echo $post['Post']['id'];?>">Edit</a>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['Post']['id']), null, __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?>
+			<?php //echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['Post']['id']), null, __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?>
+
+			<form action="/php/cake/blog2/posts/delete/<?php echo $post['Post']['id'];?>" name="post_<?php echo $post['Post']['id'];?>" id="post_<?php echo $post['Post']['id'];?>" style="display:none;" method="post"><input type="hidden" name="_method" value="POST"/></form><a href="#" onclick="if (confirm(&#039;Are you sure you want to delete # <?php echo $post['Post']['id'];?>?&#039;)) { document.post_<?php echo $post['Post']['id'];?>.submit(); } event.returnValue = false; return false;">Delete</a>	
 		</td>
 	</tr>
 <?php endforeach; ?>
